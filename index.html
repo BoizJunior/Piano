@@ -295,15 +295,20 @@
     </section>
 
     <!-- LEGACY SCROLL (History Timeline) -->
-    <section id="legacy" class="py-32 bg-void relative overflow-hidden">
-      <div class="container mx-auto px-6 mb-20">
+    <section
+      id="legacy"
+      class="py-20 md:py-32 bg-void relative overflow-hidden"
+    >
+      <div class="container mx-auto px-6 mb-10 md:mb-20">
         <div
-          class="flex items-end justify-between border-b border-white/10 pb-8"
+          class="flex flex-col md:flex-row items-start md:items-end justify-between border-b border-white/10 pb-8"
         >
-          <h2 class="text-5xl md:text-7xl font-serif text-white">
+          <h2 class="text-4xl md:text-7xl font-serif text-white">
             Lịch Sử <br /><span class="text-gold italic">Huyền Thoại</span>
           </h2>
-          <p class="text-gray-400 max-w-xs text-right hidden md:block">
+          <p
+            class="text-gray-400 max-w-xs text-left md:text-right mt-4 md:mt-0"
+          >
             Hơn 50 năm khẳng định vị thế số 1 tại các nhạc viện danh tiếng toàn
             cầu.
           </p>
@@ -312,28 +317,34 @@
 
       <!-- Horizontal Scroll Container -->
       <div class="legacy-scroll-wrapper w-full overflow-hidden">
-        <!-- Added w-max to ensure track takes full width of children -->
-        <div class="legacy-track flex gap-0 w-max">
+        <!-- Sửa: flex-col cho mobile, flex-row cho desktop (md) -->
+        <div
+          class="legacy-track flex flex-col md:flex-row gap-0 w-full md:w-max"
+        >
           <!-- Slide 1 -->
+          <!-- Sửa: w-full, h-auto cho mobile. Bỏ absolute positioning gây lỗi layout trên mobile -->
           <div
-            class="w-screen h-[70vh] flex-shrink-0 border-r border-white/5 flex flex-col justify-center px-10 md:px-32 relative group hover-trigger"
+            class="w-full md:w-screen h-auto md:h-[70vh] flex-shrink-0 border-r border-white/5 flex flex-col justify-center px-6 md:px-32 py-12 md:py-0 relative group hover-trigger"
             data-cursor="1972"
           >
             <div
-              class="absolute top-10 left-10 text-[10rem] font-bold text-white/5 select-none group-hover:text-white/10 transition-colors"
+              class="static md:absolute top-10 left-10 text-[5rem] md:text-[10rem] font-bold text-white/5 select-none group-hover:text-white/10 transition-colors leading-none mb-4 md:mb-0"
             >
               1972
             </div>
+            <!-- Ảnh chuyển sang relative trên mobile để không đè chữ -->
             <img
               src="https://images.unsplash.com/photo-1713256137855-5335010af96a?q=80&w=1948&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              class="absolute right-20 top-20 w-1/3 h-3/4 object-cover opacity-40 grayscale group-hover:grayscale-0 transition duration-700 rounded-lg"
+              class="relative md:absolute right-20 top-20 w-full md:w-1/3 h-64 md:h-3/4 object-cover opacity-40 grayscale group-hover:grayscale-0 transition duration-700 rounded-lg mb-8 md:mb-0"
               alt="Old Factory"
             />
-            <h3 class="text-4xl text-gold font-serif mb-6 relative z-10">
+            <h3
+              class="text-3xl md:text-4xl text-gold font-serif mb-4 md:mb-6 relative z-10"
+            >
               Khởi Nguyên Dòng H
             </h3>
             <p
-              class="text-xl text-gray-300 max-w-xl relative z-10 leading-relaxed"
+              class="text-lg md:text-xl text-gray-300 max-w-xl relative z-10 leading-relaxed"
             >
               Yamaha giới thiệu series U1H, đánh dấu bước nhảy vọt về công nghệ
               chế tác Piano Upright. Kỷ nguyên của âm thanh chuẩn mực bắt đầu.
@@ -342,20 +353,25 @@
 
           <!-- Slide 2 -->
           <div
-            class="w-screen h-[70vh] flex-shrink-0 border-r border-white/5 flex flex-col justify-center px-10 md:px-32 relative group hover-trigger"
+            class="w-full md:w-screen h-auto md:h-[70vh] flex-shrink-0 border-r border-white/5 flex flex-col justify-center px-6 md:px-32 py-12 md:py-0 relative group hover-trigger"
             data-cursor="CRAFTS"
           >
             <div
-              class="absolute bottom-10 right-10 text-[10rem] font-bold text-white/5 select-none"
+              class="hidden md:block absolute bottom-10 right-10 text-[10rem] font-bold text-white/5 select-none"
             >
               JAPAN
             </div>
-            <div class="flex items-center gap-12">
-              <div class="w-1/2">
-                <h3 class="text-4xl text-gold font-serif mb-6">
+            <!-- Sửa: flex-col trên mobile -->
+            <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+              <div class="w-full md:w-1/2 order-2 md:order-1">
+                <h3
+                  class="text-3xl md:text-4xl text-gold font-serif mb-4 md:mb-6"
+                >
                   Hamamatsu, Nhật Bản
                 </h3>
-                <p class="text-xl text-gray-300 leading-relaxed mb-8">
+                <p
+                  class="text-lg md:text-xl text-gray-300 leading-relaxed mb-6 md:mb-8"
+                >
                   Mỗi cây đàn được lắp ráp thủ công bởi các nghệ nhân (Takumi)
                   tại nhà máy Hamamatsu. Quy trình kiểm soát chất lượng (QC)
                   nghiêm ngặt nhất thế giới.
@@ -371,7 +387,9 @@
                   </li>
                 </ul>
               </div>
-              <div class="w-1/2 h-[50vh] overflow-hidden rounded-2xl relative">
+              <div
+                class="w-full md:w-1/2 h-[300px] md:h-[50vh] overflow-hidden rounded-2xl relative order-1 md:order-2"
+              >
                 <img
                   src="https://www.hamamatsu-japan.com/wp/wp-content/uploads/2021/05/014_2_Hamamatsu-Musem-of-Musical-Instruments.jpg"
                   class="w-full h-full object-cover scale-110 group-hover:scale-100 transition duration-1000"
@@ -383,16 +401,18 @@
 
           <!-- Slide 3 -->
           <div
-            class="w-screen h-[70vh] flex-shrink-0 border-r border-white/5 flex flex-col justify-center items-center px-10 relative bg-white text-black hover-trigger"
+            class="w-full md:w-screen h-[50vh] md:h-[70vh] flex-shrink-0 border-r border-white/5 flex flex-col justify-center items-center px-6 md:px-10 relative bg-white text-black hover-trigger"
             data-cursor="LEGEND"
           >
             <h3
-              class="text-[8vw] font-serif font-bold leading-none text-center"
+              class="text-[12vw] md:text-[8vw] font-serif font-bold leading-none text-center"
             >
               THE GOLD <br />
               STANDARD
             </h3>
-            <p class="mt-8 text-xl max-w-2xl text-center text-gray-600">
+            <p
+              class="mt-4 md:mt-8 text-lg md:text-xl max-w-2xl text-center text-gray-600"
+            >
               Cho đến nay, U1H vẫn là cây đàn được tìm kiếm nhiều nhất thế giới,
               biểu tượng cho sự bền bỉ và giá trị vượt thời gian.
             </p>
@@ -1112,26 +1132,44 @@
           )
           .to('.hero-cta', { opacity: 1, duration: 1 }, '-=0.5')
 
-        // Horizontal Scroll (Legacy Section) - Improved Logic
-        const track = document.querySelector('.legacy-track')
-        if (track) {
-          const sections = gsap.utils.toArray('.legacy-track > div')
-          // Calculate total movement needed: total width - 1 viewport width
-          // Using a functional value to recalculate on resize is best, but simple calculation works for demo.
-          const getScrollAmount = () => -(track.scrollWidth - window.innerWidth)
+        // Horizontal Scroll (Legacy Section) - Improved Logic with MatchMedia
+        // Chỉ chạy hiệu ứng cuộn ngang khi màn hình rộng hơn 768px (Desktop/Tablet)
+        ScrollTrigger.matchMedia({
+          '(min-width: 768px)': function () {
+            const track = document.querySelector('.legacy-track')
+            if (track) {
+              // Calculate total movement needed: total width - 1 viewport width
+              const getScrollAmount = () =>
+                -(track.scrollWidth - window.innerWidth)
 
-          gsap.to(track, {
-            x: getScrollAmount,
-            ease: 'none',
-            scrollTrigger: {
-              trigger: '.legacy-scroll-wrapper',
-              pin: true,
-              scrub: 1,
-              end: () => '+=' + (track.scrollWidth - window.innerWidth),
-              invalidateOnRefresh: true, // Recalculate on resize
-            },
-          })
-        }
+              gsap.to(track, {
+                x: getScrollAmount,
+                ease: 'none',
+                scrollTrigger: {
+                  trigger: '.legacy-scroll-wrapper',
+                  pin: true,
+                  scrub: 1,
+                  end: () => '+=' + (track.scrollWidth - window.innerWidth),
+                  invalidateOnRefresh: true,
+                },
+              })
+            }
+          },
+          // Mobile: Không làm gì cả (để mặc định cuộn dọc)
+          '(max-width: 767px)': function () {
+            // Có thể thêm animation đơn giản cho mobile nếu muốn (ví dụ fade in từng cái)
+            gsap.utils.toArray('.legacy-track > div').forEach((slide) => {
+              gsap.from(slide, {
+                opacity: 0,
+                y: 50,
+                scrollTrigger: {
+                  trigger: slide,
+                  start: 'top 80%',
+                },
+              })
+            })
+          },
+        })
 
         // Image Parallax
         gsap.utils.toArray('#gallery img').forEach((img) => {
